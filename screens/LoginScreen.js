@@ -8,12 +8,21 @@ const LoginScreen = () => {
   
   const handleSignUp = () => {
     auth
-      .createUserWithEmailAndPassword(email, senha)
-      .then(userCredentials => {
-        const user = userCredentials.user;
-        console.log('Registered with:', user.email);
+        .createUserWithEmailAndPassword(email, senha)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('Registered with:', user.email);
       })
       .catch(error => alert(error.message))
+  }
+  const handleLogin = () => {
+    auth
+        .signInWithEmailAndPassword(email, senha)
+        .then(userCredentials => {
+            const user = userCredentials.user;
+            console.log('Logged with:', user.email);
+        })
+        .catch(error => alert(error.message))
   }
 
   return (
@@ -40,7 +49,7 @@ const LoginScreen = () => {
 
       <View style= {styles.buttonContainer}>
         <TouchableOpacity 
-        onPress={() => { }}
+        onPress={handleLogin}
         style={styles.button}
         >
             <Text style={styles.buttonText}>Login</Text>
