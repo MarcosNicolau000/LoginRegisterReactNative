@@ -3,7 +3,7 @@ import React from 'react'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
 
-const HomeScreen = () => {
+const AccountScreen = () => {
 
   const navigation = useNavigation()
   const handleSignOut = () => {
@@ -16,6 +16,7 @@ const HomeScreen = () => {
   }
 
   return (
+    
     <View style={styles.container}>
       <View style={styles.navbar}>
         
@@ -33,7 +34,7 @@ const HomeScreen = () => {
 }
 
 
-export default HomeScreen
+export default AccountScreen
 
 const styles = StyleSheet.create({
   container: {
