@@ -16,8 +16,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-          <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
-          <Stack.Screen options={{headerShown: false}} name="Tab" component={TabNavigator} />
+        <Stack.Screen options={{headerShown: false}} name="Login" component={LoginScreen} />
+        <Stack.Screen name="Nav" component={TabNavigator} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -26,8 +26,9 @@ export default function App() {
 function TabNavigator() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={LoginScreen} />
-      <Tab.Screen name="Account" component={AccountScreen} />
+      <Tab.Screen name="Home" options={{headerShown: false}} component={HomeScreen} />
+      <Tab.Screen name="Account" defaultNavigation options={{headerShown: false}}component={AccountScreen} />
+      
     </Tab.Navigator>
   );
 }
